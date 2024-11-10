@@ -83,7 +83,7 @@ function App() {
             }}
           >
             <p style={{ fontSize: ".9rem", fontWeight: "bold" }}>
-              {student}的爸爸发起的学生请假
+              {student}爸爸发起的学生请假
             </p>
             <p style={{ marginTop: "5px" }}>
               <img
