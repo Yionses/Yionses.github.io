@@ -156,7 +156,7 @@ function App() {
 
           <span className="desc">选择学生</span>
           <span className="me-block  no-bg">
-            <span className="name no-bg">Michelle CHEN Fei 陈菲</span>
+            <span className="name no-bg">{student}</span>
           </span>
           <div className="line"></div>
 
