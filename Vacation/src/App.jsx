@@ -190,7 +190,7 @@ function App() {
               style={{
                 width: "2px",
                 backgroundColor: "#c2e2bd",
-                height: "100%",
+                height: "auto",
                 margin: "0 10px",
               }}
             ></div>
@@ -222,7 +222,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -285,7 +285,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -348,7 +348,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -505,7 +505,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -706,7 +706,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -761,7 +761,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -977,7 +977,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -1032,7 +1032,7 @@ function App() {
                 />
                 <div style={{ position: "relative" }}>
                   <img
-                    src="./imgs/yes.png"
+                    src="../imgs/yes.png"
                     style={{
                       width: "2.1rem",
                       height: "2.1rem",
@@ -1093,12 +1093,11 @@ function App() {
           lineHeight: "5rem",
           textAlign: "center",
           boxSizing: "border-box",
-          paddingTop: ".5rem",
         }}
       >
         <img
           src="../imgs/comment.png"
-          style={{ width: "1.5rem", height: "2rem" }}
+          style={{ width: "1.5rem", height: "2rem", marginTop: "1.5rem" }}
         />
       </div>
     </div>
