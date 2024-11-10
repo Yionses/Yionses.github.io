@@ -6,6 +6,10 @@ function App() {
   const [date, setDate] = useState("")
   const [twoDate, setTwoDate] = useState("")
   const [isShow, setIsShow] = useState(false)
+  const [reason, setReason] = useState("")
+  const [beginDate, setBeginDate] = useState("")
+  const [endDate, setEndDate] = useState("")
+  const [hour, setHour] = useState("")
   return (
     <>
       {isShow && (
@@ -16,7 +20,7 @@ function App() {
             top: "30%",
             transform: "translate(-50%)",
             width: "90%",
-            height: "200px",
+            height: "300px",
             background: "#0189ff",
             zIndex: 2,
             padding: "2rem",
@@ -45,6 +49,22 @@ function App() {
           <div>
             学生姓名：
             <input onChange={(e) => setStudent(e.target.value)} />
+          </div>
+          <div>
+            请假原因：
+            <input onChange={(e) => setReason(e.target.value)} />
+          </div>
+          <div>
+            开始日期：
+            <input onChange={(e) => setBeginDate(e.target.value)} />
+          </div>
+          <div>
+            结束日期：
+            <input onChange={(e) => setEndDate(e.target.value)} />
+          </div>
+          <div>
+            请假时长：
+            <input onChange={(e) => setHour(e.target.value)} />
           </div>
         </div>
       )}
@@ -189,6 +209,42 @@ function App() {
           <span className="desc">请假类型</span>
           <span className="me-block  no-bg">
             <span className="name no-bg">课程8:00-16:30</span>
+          </span>
+          <div className="line"></div>
+
+          <span className="desc">请假原因</span>
+          <span className="me-block  no-bg">
+            <span className="name no-bg">{reason}</span>
+          </span>
+          <div className="line"></div>
+
+          <span className="desc">开始日期</span>
+          <span className="me-block  no-bg">
+            <span className="name no-bg">{beginDate}</span>
+          </span>
+          <div className="line"></div>
+
+          <span className="desc">结束日期</span>
+          <span className="me-block  no-bg">
+            <span className="name no-bg">{endDate}</span>
+          </span>
+          <div className="line"></div>
+
+          <span className="desc">请假时长</span>
+          <span className="me-block  no-bg">
+            <span className="name no-bg">{hour}</span>
+          </span>
+          <div className="line"></div>
+
+          <span className="desc">时长</span>
+          <span className="me-block  no-bg">
+            <span className="name no-bg">--</span>
+          </span>
+          <div className="line"></div>
+
+          <span className="desc">附件</span>
+          <span className="me-block  no-bg">
+            <span className="name no-bg">--</span>
           </span>
           <div className="line"></div>
 
