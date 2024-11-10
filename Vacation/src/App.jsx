@@ -236,7 +236,7 @@ function App() {
           </span>
           <div className="line"></div>
 
-          <span className="desc">时长</span>
+          <span className="desc">时长（秒）</span>
           <span className="me-block  no-bg">
             <span className="name no-bg">--</span>
           </span>
@@ -250,7 +250,7 @@ function App() {
 
           <span className="desc">是否有医院就诊证明</span>
           <span className="me-block  no-bg">
-            <span className="name no-bg">无</span>
+            <span className="name no-bg">否</span>
           </span>
           <div className="line"></div>
 
