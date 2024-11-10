@@ -9,20 +9,20 @@ body {
 }
 
 .desc {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #7a7a7a;
   margin-bottom: 0.5rem;
 }
 
 .imgs {
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 0.3rem;
   vertical-align: middle;
 }
 
 .me-block {
-  width: 9rem;
+  width: 7rem;
   display: flex;
   flex-direction: row;
   padding: 0.5rem 0.3rem;
@@ -37,10 +37,18 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 0.8rem;
 }
 
 .no-bg {
+  width: auto;
   background: none !important;
+  padding-bottom: 0;
+  padding-left: 0;
+  margin-left: 0 !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
 }
 
 .line {
