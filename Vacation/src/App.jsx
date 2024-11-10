@@ -119,7 +119,7 @@ function App() {
               />
               <span
                 style={{
-                  fontSize: ".7rem",
+                  fontSize: ".8rem",
                   color: "#7a7a7a",
                   marginLeft: "8px",
                 }}
@@ -128,7 +128,7 @@ function App() {
               </span>
             </p>
             <p
-              style={{ color: "#7a7a7a", marginTop: "5px", fontSize: ".7rem" }}
+              style={{ color: "#7a7a7a", marginTop: "5px", fontSize: ".8rem" }}
             >
               流程版本号：V47
             </p>
@@ -139,7 +139,7 @@ function App() {
                 marginTop: "6px",
                 backgroundColor: "transparent",
                 borderRadius: "4px",
-                fontSize: ".7rem",
+                fontSize: ".8rem",
               }}
             >
               AI快速阅读
@@ -337,27 +337,27 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                       }}
                     >
                       {student}爸爸
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       {date}
                     </div>
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#6d6d6d",
-                        margin: ".2rem 0",
+                        margin: ".1rem 0",
                       }}
                     >
                       提交申请
                     </div>
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
@@ -400,27 +400,27 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                       }}
                     >
                       刘亭汝 Liu Tingru
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       {twoDate}
                     </div>
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#6d6d6d",
-                        margin: ".2rem 0",
+                        margin: ".1rem 0",
                       }}
                     >
                       审批人
                     </div>
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
@@ -463,19 +463,19 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                       }}
                     >
                       2 位抄送人
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       抄送人
                     </div>
 
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
@@ -519,19 +519,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         刘露莹 Liu Luying
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -563,19 +563,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         朱雪妍 Zhu xueyan
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -620,19 +620,19 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                       }}
                     >
                       3 位抄送人
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       抄送人
                     </div>
 
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
@@ -676,19 +676,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         王艳春 Wang Yanchun
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -720,19 +720,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         Robbie Shields
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -764,19 +764,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         Ram Konda
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -821,19 +821,19 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                       }}
                     >
                       刘亭汝 Liu Tingru
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       {twoDate}
                     </div>
 
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
@@ -876,19 +876,19 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                       }}
                     >
                       5 位抄送人
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       抄送人
                     </div>
 
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
@@ -932,19 +932,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         王芳 Wang Fang
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -975,19 +975,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         刘露莹 Liu Luying
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -1018,19 +1018,19 @@ function App() {
                     <div style={{ position: "relative" }}>
                       <div
                         style={{
-                          fontSize: ".7rem",
-                          margin: ".2rem 0",
+                          fontSize: ".8rem",
+                          margin: ".1rem 0",
                         }}
                       >
                         Ram Konda
                       </div>
-                      <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                      <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                         {twoDate}
                       </div>
 
                       <div
                         style={{
-                          fontSize: ".7rem",
+                          fontSize: ".8rem",
                           color: "#68b95e",
                           fontWeight: 600,
                         }}
@@ -1049,7 +1049,7 @@ function App() {
                       style={{
                         borderTop: "1px solid #e5e5e5",
                         textAlign: "center",
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         paddingTop: ".5rem",
                         color: "#9ea0ad",
                       }}
@@ -1092,19 +1092,19 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                       }}
                     >
                       {student}爸爸
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       {twoDate}
                     </div>
 
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
@@ -1147,8 +1147,8 @@ function App() {
                     />
                     <div
                       style={{
-                        fontSize: ".7rem",
-                        margin: ".2rem 0",
+                        fontSize: ".8rem",
+                        margin: ".1rem 0",
                         position: "relative",
                       }}
                     >
@@ -1165,13 +1165,13 @@ function App() {
                         已读
                       </span>
                     </div>
-                    <div style={{ fontSize: ".7rem", color: "#d9d9d9" }}>
+                    <div style={{ fontSize: ".8rem", color: "#d9d9d9" }}>
                       {twoDate}
                     </div>
 
                     <div
                       style={{
-                        fontSize: ".7rem",
+                        fontSize: ".8rem",
                         color: "#68b95e",
                         fontWeight: 600,
                       }}
