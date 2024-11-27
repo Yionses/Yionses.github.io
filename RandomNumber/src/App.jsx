@@ -554,11 +554,12 @@ function App() {
       }}
     >
       <div
+        id="content-tc"
         className="left"
         style={{
           position: "relative",
           border: "1px solid black",
-          width: "40%",
+          width: "50%",
           boxSizing: "border-box",
           padding: "40px 10px",
           whiteSpace: "pre-line",
@@ -566,33 +567,38 @@ function App() {
           marginRight: "10px",
           background: bgColor,
           color: fontColor,
+          fontSize: "14px",
         }}
       >
-        {result}
-        <span
+        <Watermark content={shuiyin}>{result}</Watermark>
+        <div
           style={{
             position: "absolute",
+            width: "100%",
             top: "10px",
             left: "50%",
             transform: "translateX(-50%)",
-            fontSize: "18px",
+            fontSize: "20px",
             fontWeight: "bold",
+            textAlign: "center",
           }}
         >
           {start}
-        </span>
-        <span
+        </div>
+        <div
           style={{
             position: "absolute",
+            width: "100%",
             bottom: "10px",
             left: "50%",
             transform: "translateX(-50%)",
-            fontSize: "18px",
+            fontSize: "20px",
             fontWeight: "bold",
+            textAlign: "center",
           }}
         >
           {end}
-        </span>
+        </div>
       </div>
       <div
         className="right"
@@ -614,58 +620,6 @@ function App() {
             </Checkbox>
           ))}
         </Checkbox.Group>
-        <div
-          id="content"
-          style={{
-            position: "relative",
-            marginTop: "30px",
-            width: "45%",
-            marginRight: "30px",
-            border: "1px solid black",
-            background: bgColor,
-            color: fontColor,
-          }}
-        >
-          <Watermark content={shuiyin}>
-            <div
-              style={{
-                padding: "40px 10px",
-                boxSizing: "border-box",
-                width: "100%",
-                boxSizing: "border-box",
-                whiteSpace: "pre-line",
-                fontSize: "12px",
-                flex: "1",
-              }}
-            >
-              {result}
-            </div>
-          </Watermark>
-          <span
-            style={{
-              position: "absolute",
-              top: "10px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              fontSize: "14px",
-              fontWeight: "bold",
-            }}
-          >
-            {start}
-          </span>
-          <span
-            style={{
-              position: "absolute",
-              bottom: "10px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              fontSize: "14px",
-              fontWeight: "bold",
-            }}
-          >
-            {end}
-          </span>
-        </div>
 
         <Form
           layout="horizontal"
@@ -683,13 +637,20 @@ function App() {
             recommended: 5,
             span: "1,9,4",
           }}
-          onFinish={createHandle}
         >
           <Form.Item name="start" label="抬头内容：">
-            <Input type="text" onChange={(e) => setStart(e.target.value)} />
+            <Input
+              type="text"
+              onChange={(e) => setStart(e.target.value)}
+              maxLength={35}
+            />
           </Form.Item>
           <Form.Item name="end" label="自定义结尾：">
-            <Input type="text" onChange={(e) => setEnd(e.target.value)} />
+            <Input
+              type="text"
+              onChange={(e) => setEnd(e.target.value)}
+              maxLength={35}
+            />
           </Form.Item>
           <Form.Item name="shuiyin" label="水印内容：">
             <Input type="text" onChange={(e) => setShuiyin(e.target.value)} />
@@ -706,66 +667,83 @@ function App() {
           <Form.Item name="recommended" label="推荐个数：">
             <Input type="number" min={3} max={8} />
           </Form.Item>
-          <Form.Item>
-            <Button type="primary" htmlType="submit" style={{ width: "30%" }}>
-              生成
-            </Button>
-            <Button
-              type="default"
-              style={{ width: "30%", marginLeft: "10px" }}
-              onClick={() => {
-                if (!result) {
-                  message.error("请先生成")
-                  return
-                }
-                setCustomText(result)
-                setCustomVisible(true)
-              }}
-            >
-              自定义
-            </Button>
-            <Button
-              type="default"
-              style={{ width: "30%", marginLeft: "10px" }}
-              onClick={async () => {
-                const element = document.getElementById("content") // 获取要导出的 div
-
-                html2canvas(element).then((canvas) => {
-                  // 将 canvas 转换为图片数据 URL
-                  const imgData = canvas.toDataURL("image/png")
-
-                  // 创建一个下载链接
-                  const link = document.createElement("a")
-                  link.href = imgData
-                  link.download = "3D推荐.png" // 图片文件名
-                  link.click() // 触发下载
-                })
-              }}
-            >
-              导出图片
-            </Button>
-            <br />
-            <div style={{ marginTop: "2px" }}>
-              <label>
-                字体颜色：
-                <ColorPicker
-                  value={fontColor}
-                  onChange={(e) => {
-                    const rgba = e.toRgbString()
-                    setFontColor(rgba)
-                  }}
-                />
-              </label>
-              <label style={{ marginLeft: "10px" }}>
-                背景颜色：
-                <ColorPicker
-                  value={bgColor}
-                  onChange={(e) => setBgColor(e.toRgbString())}
-                />
-              </label>
-            </div>
-          </Form.Item>
         </Form>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            marginTop: "30px",
+            marginLeft: "40px",
+            flex: 1,
+          }}
+        >
+          <Button type="primary" htmlType="submit" onClick={createHandle}>
+            生成
+          </Button>
+          <Button
+            type="default"
+            onClick={() => {
+              if (!result) {
+                message.error("请先生成")
+                return
+              }
+              setCustomText(result)
+              setCustomVisible(true)
+            }}
+          >
+            自定义
+          </Button>
+          <Button
+            type="default"
+            onClick={async () => {
+              const element = document.getElementById("content-tc") // 获取要导出的 div
+
+              html2canvas(element).then((canvas) => {
+                // 将 canvas 转换为图片数据 URL
+                const imgData = canvas.toDataURL("image/png")
+
+                // 创建一个下载链接
+                const link = document.createElement("a")
+                link.href = imgData
+                link.download = `${start}.png` // 图片文件名
+                link.click() // 触发下载
+              })
+            }}
+          >
+            导出图片
+          </Button>
+          <Button
+            onClick={async () => {
+              try {
+                await navigator.clipboard.writeText(result) // 将文字复制到剪贴板
+              } catch (err) {
+                console.log(e)
+              }
+            }}
+          >
+            复制文本
+          </Button>
+          <div>
+            <label>
+              字体颜色：
+              <ColorPicker
+                value={fontColor}
+                onChange={(e) => {
+                  const rgba = e.toRgbString()
+                  setFontColor(rgba)
+                }}
+              />
+            </label>
+            <label style={{ marginLeft: "10px" }}>
+              背景颜色：
+              <ColorPicker
+                value={bgColor}
+                onChange={(e) => setBgColor(e.toRgbString())}
+              />
+            </label>
+          </div>
+        </div>
         <Modal
           title="自定义"
           open={customVisible}
