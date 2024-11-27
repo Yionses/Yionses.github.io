@@ -26,7 +26,7 @@ function newLine(newArr) {
   let tempArr = newArr.sort((a, b) => a - b)
 
   if (tempArr.length < 9) {
-    return tempArr.join("")
+    return tempArr.join(" ,")
   } else {
     let str = ""
     tempArr.forEach((item, index) => {
