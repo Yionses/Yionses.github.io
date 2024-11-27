@@ -1,13 +1,46 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import "./App.css"
-import { Button, Checkbox, Form, Input, Space } from "antd"
+import {
+  Button,
+  Checkbox,
+  ColorPicker,
+  Form,
+  Input,
+  message,
+  Modal,
+  Watermark,
+} from "antd"
 import { useForm } from "antd/es/form/Form"
+import TextArea from "antd/es/input/TextArea"
+import html2canvas from "html2canvas"
 
 function randomNum(num = 10) {
   return Math.floor(Math.random() * num)
 }
 
+function sortNumb(arr) {
+  return arr.sort((a, b) => a - b).join("")
+}
+
+function newLine(newArr) {
+  let tempArr = newArr.sort((a, b) => a - b)
+
+  if (tempArr.length < 9) {
+    return tempArr.join("")
+  } else {
+    let str = ""
+    tempArr.forEach((item, index) => {
+      ;(index + 1) % 11 === 0
+        ? (str += item + (index === tempArr.length - 1 ? "" : "  ,") + "\n")
+        : (str += item + (index === tempArr.length - 1 ? "" : "  ,"))
+    })
+    return str
+  }
+}
+
 function App() {
+  const [shuiyin, setShuiyin] = useState("[水印内容]")
+  const [customVisible, setCustomVisible] = useState(false)
   const checkData = [
     {
       label: "独胆",
@@ -86,6 +119,9 @@ function App() {
       value: "单挑",
     },
   ]
+  const [fontColor, setFontColor] = useState("#000000")
+  const [bgColor, setBgColor] = useState("#FFFFFF")
+  const [customText, setCustomText] = useState("")
   const [selected, setSelected] = useState(checkData.map((item) => item.value))
   const [form] = useForm()
   const [result, setResult] = useState("")
@@ -151,7 +187,7 @@ function App() {
         d2d = randomNum()
       }
 
-      D2D = "双胆：" + d2d + d1d + "\n"
+      D2D = "双胆：" + (d2d < d1d ? d2d + "" + d1d : d1d + "" + d2d) + "\n"
     }
     if (selected.includes("三胆")) {
       if (d1d === "") {
@@ -170,7 +206,7 @@ function App() {
       while (d3d === d1d || d3d === d2d || disabledDDD.includes(d3d)) {
         d3d = randomNum()
       }
-      D3D = "三胆：" + d3d + d2d + d1d + "\n"
+      D3D = "三胆：" + sortNumb([d3d, d2d, d1d]) + "\n"
     }
     if (selected.includes("四码")) {
       if (d1d === "") {
@@ -200,7 +236,7 @@ function App() {
       ) {
         d4d = randomNum()
       }
-      D4D = "四码：" + d4d + d3d + d2d + d1d + "\n"
+      D4D = "四码：" + sortNumb([d4d, d3d, d2d, d1d]) + "\n"
     }
     if (selected.includes("五码")) {
       if (d1d === "") {
@@ -242,7 +278,7 @@ function App() {
       ) {
         d5d = randomNum()
       }
-      D5D = "五码：" + d5d + d4d + d3d + d2d + d1d + "\n"
+      D5D = "五码：" + sortNumb([d5d, d4d, d3d, d2d, d1d]) + "\n"
     }
     if (selected.includes("六码")) {
       if (d1d === "") {
@@ -299,12 +335,7 @@ function App() {
       }
       D6D =
         `六码${selected.includes("含组三") ? "(含组三)" : ""}：` +
-        d6d +
-        d5d +
-        d4d +
-        d3d +
-        d2d +
-        d1d +
+        sortNumb([d6d, d5d, d4d, d3d, d2d, d1d]) +
         "\n"
     }
 
@@ -376,7 +407,7 @@ function App() {
         }
         bwtj.push(temp)
       }
-      BWTJ = "百位推荐：" + bwtj.join("") + "\n"
+      BWTJ = "百位推荐：" + sortNumb(bwtj) + "\n"
     }
 
     if (!BWTJ) {
@@ -397,7 +428,7 @@ function App() {
         }
         swtj.push(temp)
       }
-      SWTJ = "十位推荐：" + swtj.join("") + "\n"
+      SWTJ = "十位推荐：" + sortNumb(swtj) + "\n"
     }
 
     if (!SWTJ) {
@@ -418,7 +449,7 @@ function App() {
         }
         gwtj.push(temp)
       }
-      GWTJ = "个位推荐：" + gwtj.join("") + "\n"
+      GWTJ = "个位推荐：" + sortNumb(gwtj) + "\n"
     }
 
     if (!GWTJ) {
@@ -430,7 +461,6 @@ function App() {
         gwtj.push(temp)
       }
     }
-    console.log(gwtj)
 
     let dt = []
     let DT = ""
@@ -469,7 +499,7 @@ function App() {
         }
         zx.push(str)
       }
-      ZX = "直选号：" + zx.join(",") + "\n"
+      ZX = "直选号：" + newLine(zx) + "\n"
     }
 
     let zx1 = []
@@ -489,7 +519,7 @@ function App() {
         }
         zx1.push(str)
       }
-      ZX1 = "组选号：" + zx1.join(",") + "\n"
+      ZX1 = "组选号：" + newLine(zx1) + "\n"
     }
 
     result =
@@ -534,6 +564,8 @@ function App() {
           whiteSpace: "pre-line",
           lineHeight: "30px",
           marginRight: "10px",
+          background: bgColor,
+          color: fontColor,
         }}
       >
         {result}
@@ -582,22 +614,33 @@ function App() {
             </Checkbox>
           ))}
         </Checkbox.Group>
-
         <div
+          id="content"
           style={{
+            position: "relative",
             marginTop: "30px",
             width: "45%",
-            boxSizing: "border-box",
-            padding: "40px 10px",
             marginRight: "30px",
             border: "1px solid black",
-            position: "relative",
-            whiteSpace: "pre-line",
-            fontSize: "12px",
-            flex: "1",
+            background: bgColor,
+            color: fontColor,
           }}
         >
-          {result}
+          <Watermark content={shuiyin}>
+            <div
+              style={{
+                padding: "40px 10px",
+                boxSizing: "border-box",
+                width: "100%",
+                boxSizing: "border-box",
+                whiteSpace: "pre-line",
+                fontSize: "12px",
+                flex: "1",
+              }}
+            >
+              {result}
+            </div>
+          </Watermark>
           <span
             style={{
               position: "absolute",
@@ -623,6 +666,7 @@ function App() {
             {end}
           </span>
         </div>
+
         <Form
           layout="horizontal"
           form={form}
@@ -642,13 +686,13 @@ function App() {
           onFinish={createHandle}
         >
           <Form.Item name="start" label="抬头内容：">
-            <Input type="text" />
+            <Input type="text" onChange={(e) => setStart(e.target.value)} />
           </Form.Item>
           <Form.Item name="end" label="自定义结尾：">
-            <Input type="text" />
+            <Input type="text" onChange={(e) => setEnd(e.target.value)} />
           </Form.Item>
           <Form.Item name="shuiyin" label="水印内容：">
-            <Input type="text" />
+            <Input type="text" onChange={(e) => setShuiyin(e.target.value)} />
           </Form.Item>
           <Form.Item name="direct" label="直选个数：">
             <Input type="number" />
@@ -663,14 +707,82 @@ function App() {
             <Input type="number" min={3} max={8} />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" style={{ width: "40%" }}>
+            <Button type="primary" htmlType="submit" style={{ width: "30%" }}>
               生成
             </Button>
-            <Button type="default" style={{ width: "40%", marginLeft: "10px" }}>
+            <Button
+              type="default"
+              style={{ width: "30%", marginLeft: "10px" }}
+              onClick={() => {
+                if (!result) {
+                  message.error("请先生成")
+                  return
+                }
+                setCustomText(result)
+                setCustomVisible(true)
+              }}
+            >
               自定义
             </Button>
+            <Button
+              type="default"
+              style={{ width: "30%", marginLeft: "10px" }}
+              onClick={async () => {
+                const element = document.getElementById("content") // 获取要导出的 div
+
+                html2canvas(element).then((canvas) => {
+                  // 将 canvas 转换为图片数据 URL
+                  const imgData = canvas.toDataURL("image/png")
+
+                  // 创建一个下载链接
+                  const link = document.createElement("a")
+                  link.href = imgData
+                  link.download = "3D推荐.png" // 图片文件名
+                  link.click() // 触发下载
+                })
+              }}
+            >
+              导出图片
+            </Button>
+            <br />
+            <div style={{ marginTop: "2px" }}>
+              <label>
+                字体颜色：
+                <ColorPicker
+                  value={fontColor}
+                  onChange={(e) => {
+                    const rgba = e.toRgbString()
+                    setFontColor(rgba)
+                  }}
+                />
+              </label>
+              <label style={{ marginLeft: "10px" }}>
+                背景颜色：
+                <ColorPicker
+                  value={bgColor}
+                  onChange={(e) => setBgColor(e.toRgbString())}
+                />
+              </label>
+            </div>
           </Form.Item>
         </Form>
+        <Modal
+          title="自定义"
+          open={customVisible}
+          okText="确定"
+          cancelText="取消"
+          onCancel={() => setCustomVisible(false)}
+          onOk={() => {
+            setResult(customText)
+            setCustomVisible(false)
+          }}
+        >
+          <TextArea
+            rows={selected.length + 2}
+            value={customText}
+            onChange={(e) => setCustomText(e.target.value)}
+          />
+        </Modal>
       </div>
     </div>
   )
