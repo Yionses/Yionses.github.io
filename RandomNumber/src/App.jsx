@@ -408,17 +408,21 @@ function App() {
         bwtj.push(temp)
       }
       BWTJ = "百位推荐：" + sortNumb(bwtj) + "\n"
+    } else {
+      bwtj = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].filter(
+        (item) => !disabledDDD.includes(item)
+      )
     }
 
-    if (!BWTJ) {
-      for (let i = 0; i < recommended; i++) {
-        let temp = randomNum()
-        while (bwtj.includes(temp) || disabledDDD.includes(temp)) {
-          temp = randomNum()
-        }
-        bwtj.push(temp)
-      }
-    }
+    // if (!BWTJ) {
+    //   for (let i = 0; i < recommended; i++) {
+    //     let temp = randomNum()
+    //     while (bwtj.includes(temp) || disabledDDD.includes(temp)) {
+    //       temp = randomNum()
+    //     }
+    //     bwtj.push(temp)
+    //   }
+    // }
 
     if (selected.includes("十位推荐")) {
       for (let i = 0; i < recommended; i++) {
@@ -429,17 +433,21 @@ function App() {
         swtj.push(temp)
       }
       SWTJ = "十位推荐：" + sortNumb(swtj) + "\n"
+    } else {
+      swtj = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].filter(
+        (item) => !disabledDDD.includes(item)
+      )
     }
 
-    if (!SWTJ) {
-      for (let i = 0; i < recommended; i++) {
-        let temp = randomNum()
-        while (swtj.includes(temp) || disabledDDD.includes(temp)) {
-          temp = randomNum()
-        }
-        swtj.push(temp)
-      }
-    }
+    // if (!SWTJ) {
+    //   for (let i = 0; i < recommended; i++) {
+    //     let temp = randomNum()
+    //     while (swtj.includes(temp) || disabledDDD.includes(temp)) {
+    //       temp = randomNum()
+    //     }
+    //     swtj.push(temp)
+    //   }
+    // }
 
     if (selected.includes("个位推荐")) {
       for (let i = 0; i < recommended; i++) {
@@ -450,17 +458,21 @@ function App() {
         gwtj.push(temp)
       }
       GWTJ = "个位推荐：" + sortNumb(gwtj) + "\n"
+    } else {
+      gwtj = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].filter(
+        (item) => !disabledDDD.includes(item)
+      )
     }
 
-    if (!GWTJ) {
-      for (let i = 0; i < recommended; i++) {
-        let temp = randomNum()
-        while (gwtj.includes(temp) || disabledDDD.includes(temp)) {
-          temp = randomNum()
-        }
-        gwtj.push(temp)
-      }
-    }
+    // if (!GWTJ) {
+    //   for (let i = 0; i < recommended; i++) {
+    //     let temp = randomNum()
+    //     while (gwtj.includes(temp) || disabledDDD.includes(temp)) {
+    //       temp = randomNum()
+    //     }
+    //     gwtj.push(temp)
+    //   }
+    // }
 
     let dt = []
     let DT = ""
@@ -656,13 +668,13 @@ function App() {
             <Input type="text" onChange={(e) => setShuiyin(e.target.value)} />
           </Form.Item>
           <Form.Item name="direct" label="直选个数：">
-            <Input type="number" />
+            <Input type="number" max={800} />
           </Form.Item>
           <Form.Item name="group" label="组选个数：">
-            <Input type="number" />
+            <Input type="number" max={800} />
           </Form.Item>
           <Form.Item name="vs" label="单挑个数：">
-            <Input type="number" />
+            <Input type="number" max={800} />
           </Form.Item>
           <Form.Item name="recommended" label="推荐个数：">
             <Input type="number" min={3} max={8} />
