@@ -8,7 +8,7 @@ import {
   Input,
   message,
   Modal,
-  Watermark,
+  Watermark
 } from "antd"
 import { useForm } from "antd/es/form/Form"
 import TextArea from "antd/es/input/TextArea"
@@ -44,80 +44,80 @@ function App() {
   const checkData = [
     {
       label: "独胆",
-      value: "独胆",
+      value: "独胆"
     },
     {
       label: "双胆",
-      value: "双胆",
+      value: "双胆"
     },
     {
       label: "三胆",
-      value: "三胆",
+      value: "三胆"
     },
     {
       label: "和值",
-      value: "和值",
+      value: "和值"
     },
     {
       label: "跨度",
-      value: "跨度",
+      value: "跨度"
     },
     {
       label: "大小组合",
-      value: "大小组合",
+      value: "大小组合"
     },
     {
       label: "奇偶组合",
-      value: "奇偶组合",
+      value: "奇偶组合"
     },
     {
       label: "杀1码",
-      value: "杀1码",
+      value: "杀1码"
     },
     {
       label: "杀2码",
-      value: "杀2码",
+      value: "杀2码"
     },
     {
       label: "四码",
-      value: "四码",
+      value: "四码"
     },
     {
       label: "五码",
-      value: "五码",
+      value: "五码"
     },
     {
       label: "六码",
-      value: "六码",
+      value: "六码"
     },
     {
       label: "百位推荐",
-      value: "百位推荐",
+      value: "百位推荐"
     },
     {
       label: "十位推荐",
-      value: "十位推荐",
+      value: "十位推荐"
     },
     {
       label: "个位推荐",
-      value: "个位推荐",
+      value: "个位推荐"
     },
     {
       label: "直选号",
-      value: "直选号",
+      value: "直选号"
     },
     {
       label: "组选号",
-      value: "组选号",
+      value: "组选号"
     },
     {
       label: "含组三",
-      value: "含组三",
+      value: "含组三"
     },
     {
       label: "单挑",
-      value: "单挑",
-    },
+      value: "单挑"
+    }
   ]
   const [fontColor, setFontColor] = useState("#000000")
   const [bgColor, setBgColor] = useState("#FFFFFF")
@@ -562,7 +562,7 @@ function App() {
         justifyContent: "space-evenly",
         alignItems: "center",
         boxSizing: "border-box",
-        padding: "10px 40px",
+        padding: "10px 40px"
       }}
     >
       <div
@@ -579,7 +579,7 @@ function App() {
           marginRight: "10px",
           background: bgColor,
           color: fontColor,
-          fontSize: "14px",
+          fontSize: "16px"
         }}
       >
         <Watermark content={shuiyin}>{result}</Watermark>
@@ -590,9 +590,9 @@ function App() {
             top: "10px",
             left: "50%",
             transform: "translateX(-50%)",
-            fontSize: "20px",
+            fontSize: "22px",
             fontWeight: "bold",
-            textAlign: "center",
+            textAlign: "center"
           }}
         >
           {start}
@@ -604,9 +604,9 @@ function App() {
             bottom: "10px",
             left: "50%",
             transform: "translateX(-50%)",
-            fontSize: "20px",
+            fontSize: "22px",
             fontWeight: "bold",
-            textAlign: "center",
+            textAlign: "center"
           }}
         >
           {end}
@@ -619,7 +619,7 @@ function App() {
           height: "100%",
           display: "flex",
           flexDirection: "row",
-          flexWrap: "wrap",
+          flexWrap: "wrap"
         }}
       >
         <Checkbox.Group defaultValue={selected} onChange={setSelected}>
@@ -647,7 +647,7 @@ function App() {
             group: 10,
             vs: 5,
             recommended: 5,
-            span: "1,9,4",
+            span: "1,9,4"
           }}
         >
           <Form.Item name="start" label="抬头内容：">
@@ -687,7 +687,7 @@ function App() {
             justifyContent: "space-between",
             marginTop: "30px",
             marginLeft: "40px",
-            flex: 1,
+            flex: 1
           }}
         >
           <Button type="primary" htmlType="submit" onClick={createHandle}>
